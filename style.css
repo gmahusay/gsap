@@ -1,11 +1,11 @@
 :root {
-    --bg-dark: #0f172a;
-    --text-light: #f8fafc;
-    --accent: #38bdf8;
-    --accent-glow: rgba(56, 189, 248, 0.5);
-    --secondary: #818cf8;
-    --card-bg: rgba(30, 41, 59, 0.7);
-    --glass-border: rgba(255, 255, 255, 0.1);
+    --bg-dark: rgba(18, 21, 28, 0.85);
+    --text-light: #f1f5f9;
+    --accent: #2563eb;
+    --accent-glow: rgba(37, 99, 235, 0.6);
+    --secondary: #475569;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.15);
 }
 
 * {
@@ -15,15 +15,19 @@
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: var(--bg-dark);
+    font-family: 'Roboto', sans-serif;
+    background-color: #12151c;
+    background-image: linear-gradient(var(--bg-dark), var(--bg-dark)), url('https://images.unsplash.com/photo-1604076913837-52ab5629fba9?q=80&w=2160&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     color: var(--text-light);
     overflow-x: hidden;
     line-height: 1.6;
 }
 
 h1, h2, h3, .hero-title {
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .panel {
@@ -451,7 +455,7 @@ h1, h2, h3, .hero-title {
     color: transparent;
     -webkit-text-stroke: 2px var(--secondary);
     padding-right: 50px;
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 /* Stacked Cards */
