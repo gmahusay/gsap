@@ -1,5 +1,5 @@
-// Register ScrollTrigger
-gsap.registerPlugin(ScrollTrigger);
+// Register ScrollTrigger and TextPlugin
+gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
 // --- Section 1: Hero Animation ---
 // Play on load
@@ -345,7 +345,9 @@ gsap.utils.toArray(".stacked-card").forEach((card, i) => {
         trigger: card,
         start: "top top",
         pin: true,
-        pinSpacing: false
+        pinSpacing: false,
+        endTrigger: "#stacked-section",
+        end: "bottom bottom"
     });
 });
 
@@ -409,14 +411,7 @@ gsap.to(typeText, {
         trigger: "#typing-section",
         start: "top 80%",
         end: "bottom 20%",
-        scrub: true,
-        onUpdate: self => {
-            // GSAP doesn't have a native text-typing scrub without TextPlugin,
-            // so we'll simulate it by substringing based on progress
-            let progress = self.progress;
-            let length = Math.floor(progress * originalText.length);
-            typeText.innerText = originalText.substring(0, length);
-        }
+        scrub: true
     }
 });
 
