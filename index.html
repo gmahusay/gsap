@@ -14,6 +14,9 @@
 </head>
 <body>
 
+    <!-- Reading Progress Bar -->
+    <div class="progress-bar"></div>
+
     <!-- Section 1: Hero -->
     <section id="hero" class="panel flex-center text-center">
         <div class="content">
@@ -64,6 +67,14 @@
         </div>
     </section>
 
+    <!-- Section 4.5: Text Effects -->
+    <section id="text-effects-section" class="panel flex-center">
+        <div class="content text-center">
+            <h2 class="dynamic-text">Typography Magic</h2>
+            <p class="dynamic-subtext">Watch as the font weight, size, color, and spacing change smoothly on scroll.</p>
+        </div>
+    </section>
+
     <!-- Section 5: Snapping -->
     <section id="snap-section" class="panel">
         <div class="snap-container">
@@ -80,6 +91,101 @@
             <div class="horizontal-panel bg-gradient-2 flex-center"><h2>Horizontal 2</h2></div>
             <div class="horizontal-panel bg-gradient-3 flex-center"><h2>Horizontal 3</h2></div>
             <div class="horizontal-panel bg-gradient-4 flex-center"><h2>Horizontal 4</h2></div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION 1: Velocity Skewing -->
+    <section id="velocity-section" class="panel flex-center">
+        <div class="content text-center">
+            <h2 class="skew-elem">Scroll Fast!</h2>
+            <div class="box skew-box skew-elem">I skew on scroll</div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION 2: Parallax Background -->
+    <section id="parallax-section" class="panel flex-center parallax-bg">
+        <div class="content text-center parallax-content">
+            <h2>Parallax Magic</h2>
+            <p>The background moves slower than this text.</p>
+        </div>
+    </section>
+
+    <!-- NEW SECTION 3: Staggered Grid -->
+    <section id="stagger-section" class="panel flex-center">
+        <div class="content text-center">
+            <h2>Staggered Grid</h2>
+            <div class="grid-container">
+                <div class="grid-item">1</div>
+                <div class="grid-item">2</div>
+                <div class="grid-item">3</div>
+                <div class="grid-item">4</div>
+                <div class="grid-item">5</div>
+                <div class="grid-item">6</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION 4: SVG Path Drawing -->
+    <section id="svg-section" class="panel flex-center">
+        <div class="content text-center">
+            <h2>SVG Path Drawing</h2>
+            <svg viewBox="0 0 400 200" class="draw-svg">
+                <path d="M 10 100 Q 100 10 200 100 T 390 100" fill="transparent" stroke="var(--accent)" stroke-width="8" stroke-linecap="round"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- NEW SECTION 5: Text Mask Reveal -->
+    <section id="mask-section" class="panel flex-center">
+        <div class="content text-center">
+            <div class="mask-container">
+                <h2 class="mask-text">Revealed from hiding</h2>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION 6: Zoom/Scale Hero -->
+    <section id="zoom-section" class="panel flex-center">
+        <div class="zoom-image-container">
+            <div class="zoom-image"></div>
+        </div>
+        <div class="content text-center zoom-text" style="position:absolute; pointer-events:none;">
+            <h2 style="color:white; text-shadow:0 0 10px black;">Infinite Zoom</h2>
+        </div>
+    </section>
+
+    <!-- NEW SECTION 7: Color Theme Transition -->
+    <section id="color-section" class="panel flex-center">
+        <div class="content text-center">
+            <h2 class="color-text">Theme Transition</h2>
+            <p class="color-text">Scroll to change the background to a bright theme!</p>
+        </div>
+    </section>
+
+    <!-- NEW SECTION 8: 3D Flip Cards -->
+    <section id="flip-section" class="panel flex-center">
+        <div class="content text-center">
+            <h2>3D Flip</h2>
+            <div class="flip-container">
+                <div class="flip-card">Front</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION 9: Morphing Shape -->
+    <section id="morph-section" class="panel flex-center">
+        <div class="content flex-center">
+            <h2>Shape Morphing</h2>
+            <div class="morph-box"></div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION 10: Text Highlighting -->
+    <section id="highlight-section" class="panel flex-center">
+        <div class="content">
+            <h2 style="font-size: 3rem; line-height: 1.5;">
+                This text will get a <span class="highlight">marker highlight</span> as you scroll past it, creating a cool <span class="highlight">reading effect</span>!
+            </h2>
         </div>
     </section>
 
