@@ -287,3 +287,148 @@ gsap.to(".progress-bar", {
         scrub: true
     }
 });
+
+// --- NEW SECTION 11: Split Text Fly-In ---
+gsap.from(".split-text span", {
+    opacity: 0,
+    y: () => Math.random() * 200 - 100,
+    x: () => Math.random() * 200 - 100,
+    rotation: () => Math.random() * 180 - 90,
+    duration: 1,
+    stagger: 0.05,
+    ease: "back.out(1.5)",
+    scrollTrigger: {
+        trigger: "#split-text-section",
+        start: "top 60%",
+        toggleActions: "play none none reverse"
+    }
+});
+
+// --- NEW SECTION 12: Image Wipe Reveal ---
+gsap.to(".wipe-overlay", {
+    xPercent: 100,
+    ease: "none",
+    scrollTrigger: {
+        trigger: "#wipe-section",
+        start: "top top",
+        end: "+=1000",
+        pin: true,
+        scrub: true
+    }
+});
+
+// --- NEW SECTION 13: Infinite Marquee ---
+let marqueeProxy = { skew: 0 },
+    marqueeSpeed = 1,
+    marqueeTween = gsap.to(".marquee-content", {
+        xPercent: -50,
+        ease: "none",
+        duration: 10,
+        repeat: -1
+    });
+
+ScrollTrigger.create({
+    onUpdate: (self) => {
+        let velocity = self.getVelocity() / 500;
+        let dir = self.direction;
+        gsap.to(marqueeTween, {
+            timeScale: dir * (1 + Math.abs(velocity)),
+            duration: 0.5,
+            overwrite: true
+        });
+    }
+});
+
+// --- NEW SECTION 14: Stacked Cards ---
+gsap.utils.toArray(".stacked-card").forEach((card, i) => {
+    ScrollTrigger.create({
+        trigger: card,
+        start: "top top",
+        pin: true,
+        pinSpacing: false
+    });
+});
+
+// --- NEW SECTION 15: Blur to Focus ---
+gsap.to(".blur-text", {
+    filter: "blur(0px)",
+    opacity: 1,
+    ease: "none",
+    scrollTrigger: {
+        trigger: "#blur-section",
+        start: "top center",
+        end: "center center",
+        scrub: true
+    }
+});
+
+// --- NEW SECTION 16: Exploding Gallery ---
+let tlGallery = gsap.timeline({
+    scrollTrigger: {
+        trigger: "#gallery-section",
+        start: "top top",
+        end: "+=1500",
+        pin: true,
+        scrub: true
+    }
+});
+tlGallery.to(".g-item-1", { x: -200, y: -200, rotation: -15 }, 0)
+         .to(".g-item-2", { x: 200, y: -200, rotation: 15 }, 0)
+         .to(".g-item-3", { x: -200, y: 200, rotation: -25 }, 0)
+         .to(".g-item-4", { x: 200, y: 200, rotation: 25 }, 0)
+         .to(".g-item-5", { scale: 1.2 }, 0);
+
+// --- NEW SECTION 17: Circular Rotating Text ---
+gsap.to(".circle-svg", {
+    rotation: 360,
+    ease: "none",
+    scrollTrigger: {
+        trigger: "#circle-text-section",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 1
+    }
+});
+
+// --- NEW SECTION 18: Glitch Text (Animation is purely CSS, just adding a class) ---
+ScrollTrigger.create({
+    trigger: "#glitch-section",
+    start: "top 50%",
+    end: "bottom 50%",
+    toggleClass: {targets: ".glitch-text", className: "is-glitching"}
+});
+
+// --- NEW SECTION 19: Typing Effect ---
+let typeText = document.querySelector(".typing-text");
+let originalText = typeText.innerText;
+typeText.innerText = "";
+gsap.to(typeText, {
+    text: originalText,
+    ease: "none",
+    scrollTrigger: {
+        trigger: "#typing-section",
+        start: "top 80%",
+        end: "bottom 20%",
+        scrub: true,
+        onUpdate: self => {
+            // GSAP doesn't have a native text-typing scrub without TextPlugin,
+            // so we'll simulate it by substringing based on progress
+            let progress = self.progress;
+            let length = Math.floor(progress * originalText.length);
+            typeText.innerText = originalText.substring(0, length);
+        }
+    }
+});
+
+// --- NEW SECTION 20: Background Gradient Shift ---
+ScrollTrigger.create({
+    trigger: "#gradient-shift-section",
+    start: "top bottom",
+    end: "bottom top",
+    scrub: true,
+    onUpdate: self => {
+        let pct = Math.floor(self.progress * 100);
+        document.querySelector(".gradient-shift").style.background = 
+            `radial-gradient(circle at ${pct}% ${100 - pct}%, #1e1b4b 0%, #0f172a 100%)`;
+    }
+});
