@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSAP ScrollTrigger Masterclass</title>
+    <meta name="description" content="A premium landing page showcasing various GSAP ScrollTrigger animations.">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Section 1: Hero -->
+    <section id="hero" class="panel flex-center text-center">
+        <div class="content">
+            <h1 class="hero-title">Master the Scroll</h1>
+            <p class="hero-subtitle">Scroll down to explore jaw-dropping ScrollTrigger animations.</p>
+            <div class="scroll-indicator">
+                <span>↓</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Basic Scrubbing -->
+    <section id="scrub-section" class="panel flex-center">
+        <div class="content flex-row">
+            <div class="text-block">
+                <h2>Smooth Scrubbing</h2>
+                <p>Link animations directly to the scrollbar. As you scroll, the animation progresses.</p>
+            </div>
+            <div class="box-container">
+                <div class="box scrub-box">Scrub Me</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Pinning -->
+    <section id="pin-section" class="panel flex-center">
+        <div class="content flex-row">
+            <div class="text-block pin-text">
+                <h2>Pin Elements</h2>
+                <p>Pin an element in place while the user keeps scrolling down the page. Great for storytelling.</p>
+            </div>
+            <div class="image-container">
+                <div class="image-placeholder pin-image">Image Pinned</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Toggle Actions -->
+    <section id="toggle-section" class="panel flex-center">
+        <div class="content text-center">
+            <h2 class="toggle-title">Toggle Actions</h2>
+            <p class="toggle-subtitle">Trigger animations based on scroll position (play, pause, resume, reverse).</p>
+            <div class="cards-container">
+                <div class="card toggle-card">Card 1</div>
+                <div class="card toggle-card">Card 2</div>
+                <div class="card toggle-card">Card 3</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Snapping -->
+    <section id="snap-section" class="panel">
+        <div class="snap-container">
+            <div class="snap-panel panel-1 flex-center"><h2>Snap Section 1</h2></div>
+            <div class="snap-panel panel-2 flex-center"><h2>Snap Section 2</h2></div>
+            <div class="snap-panel panel-3 flex-center"><h2>Snap Section 3</h2></div>
+        </div>
+    </section>
+
+    <!-- Section 6: Horizontal Scroll -->
+    <section id="horizontal-section" class="panel">
+        <div class="horizontal-container">
+            <div class="horizontal-panel bg-gradient-1 flex-center"><h2>Horizontal 1</h2></div>
+            <div class="horizontal-panel bg-gradient-2 flex-center"><h2>Horizontal 2</h2></div>
+            <div class="horizontal-panel bg-gradient-3 flex-center"><h2>Horizontal 3</h2></div>
+            <div class="horizontal-panel bg-gradient-4 flex-center"><h2>Horizontal 4</h2></div>
+        </div>
+    </section>
+
+    <!-- Section 7: Footer -->
+    <section id="footer" class="panel flex-center">
+        <div class="content text-center">
+            <h2 class="footer-title">Ready to build?</h2>
+            <p>Get started with GSAP ScrollTrigger today.</p>
+            <a href="https://gsap.com/docs/v3/Plugins/ScrollTrigger/" class="cta-btn" target="_blank">View Docs</a>
+        </div>
+    </section>
+
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <!-- Custom JS -->
+    <script src="main.js"></script>
+</body>
+</html>
